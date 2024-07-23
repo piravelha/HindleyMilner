@@ -1,0 +1,14 @@
+?start: expr
+
+?expr: NAME
+     | abstraction
+     | application
+     | "(" expr ")"
+
+application: expr expr
+
+abstraction: NAME "." expr
+
+NAME: /[a-zA-Z_]\w*/
+
+%ignore /\s+/
